@@ -1,8 +1,8 @@
 services:
    vprodb:
       build:
-         context: .
-         dockerfile: Docker-files/app/Dockerfile
+         context: Docker-files/db
+         dockerfile: Dockerfile
       image: vprocontainers/vprodb
       container_name: vprodb
       ports:
@@ -28,8 +28,8 @@ services:
            - RABBITMQ_DEFAULT_PASS=guest
    vproapp:
         build:
-           context: .
-           dockerfile: Docker-files/app/Dockerfile
+           context: Docker-files/app
+           dockerfile: Dockerfile
         image: vproapp
         container_name: vprocontainers/vproapp
         ports:
@@ -38,8 +38,8 @@ services:
             - vpro-app-data:/usr/local/tomcat/webapps
    vproweb:
         build:
-           context: .
-           dockerfile: Docker-files/app/Dockerfile
+           context: Docker-files/web
+           dockerfile: Dockerfile
         image: vproweb
         container_name: vprocontainers/vproweb
         ports:
