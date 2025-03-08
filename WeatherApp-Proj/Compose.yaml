@@ -1,0 +1,11 @@
+# Create a docker-compose file to build the image of the WeatherApp service
+version: "3.8"
+services:
+    weatherapp:
+      build:
+        context: ./Weather-App
+        dockerfile: ../Dockerfile
+      image: weatherapp
+      container_name: weatherapp
+      ports:
+      - "8080:8080"
