@@ -28,8 +28,13 @@ services:
            - RABBITMQ_DEFAULT_PASS=guest
    vproapp:
         build:
+<<<<<<< HEAD
            context: .
            dockerfile: Docker-files/app/Dockerfile
+=======
+           context: ./Docker-files/app
+           dockerfile: Dockerfile
+>>>>>>> 674b967 (Updated vpro-project)
         image: vproapp
         container_name: vprocontainers/vproapp
         ports:
