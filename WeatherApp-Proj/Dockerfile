@@ -10,7 +10,7 @@ COPY Weather-App/package*.json /APP/
 RUN npm install
 
 # Copy the rest of the application and make the build_image
-COPY Weather-App/. .  # Everything inside Weather-App is now copied
+COPY Weather-App/ . 
 RUN npm run build
 
 # Create a final image for deployment
