@@ -6,7 +6,7 @@ LABEL "Author"="Nayan"
 WORKDIR /APP
 
 # Copy package files first to optimize caching
-COPY package*.json ./
+COPY Weather-App/package*.json /APP/
 RUN npm install
 
 # Copy the rest of the application and make the build_image
