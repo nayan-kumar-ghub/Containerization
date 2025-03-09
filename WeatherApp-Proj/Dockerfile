@@ -9,6 +9,9 @@ WORKDIR /APP
 COPY Weather-App/package*.json /APP/
 RUN npm install
 
+# Enable legacy OpenSSL provider for compatibility
+ENV NODE_OPTIONS="--openssl-legacy-provider"
+
 # Copy the rest of the application and make the build_image
 COPY Weather-App/ . 
 RUN npm run build
