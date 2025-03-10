@@ -21,6 +21,6 @@ FROM nginx:1.21.3
 LABEL "Project"="WeatherApp"
 LABEL "Author"="Nayan"
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=build_image /APP/dist /usr/share/nginx/html
+COPY --from=build_image /APP/build /usr/share/nginx/html
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
